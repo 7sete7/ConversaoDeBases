@@ -1,0 +1,39 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de conversão</title>
+    <style>
+        .container{
+            margin-top: 20vh;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .container input{
+            width: 100%;
+            height: 5em;
+            margin-top: 15px;
+            padding: .5rem;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .container input:focus{
+            outline: none;
+            border-bottom: 3px solid #2196f3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" placeholder="Octal" id="Octal">
+        <input type="text" placeholder="Decimal" id="Decimal">
+        <input type="text" placeholder="Hexadecimal" id="Hexa">
+        <input type="text" placeholder="Binário" id="Binary">
+    </div>
+
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
