@@ -5,19 +5,19 @@ function changeValue(value){
     Binary.value  = value || 0;
 }
 
-NodeList.prototype.drawValueFrom = function(from) {
+NodeList.prototype.drawValueFrom = function(from, value) {
     for(const input of this)
         if(input.id != from)
-            input.value = eval(`${from}.to${input.id}()`) || "";
+            input.value = value? eval(`${from}.to${input.id}()`) : "";
 }
 
 const inputs = document.querySelectorAll("input");
 
 for(let input of inputs)
     input.addEventListener('input', e => {
-        changeValue(e.srcElement.value);
-        const id = e.srcElement.id;
-        inputs.drawValueFrom(id);
+        changeValue(e.target.value);
+        const id = e.target.id;
+        inputs.drawValueFrom(id, e.target.value);
     });
 
 
